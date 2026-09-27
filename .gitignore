@@ -16,3 +16,6 @@ isim.log
 *_isim_beh.exe
 *_isim_beh.wdb
 xilinxsim.ini
+
+# ignore the C's output
+output/
