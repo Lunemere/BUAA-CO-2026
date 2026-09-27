@@ -1,1 +1,18 @@
 .workbuddy/
+
+# Xilinx ISE/ISim project and simulation output, in any year or project.
+_xmsgs/
+iseconfig/
+isim/
+*.gise
+*.xise
+*_summary.html
+fuse.log
+*.xmsgs
+fuseRelaunch.cmd
+isim.cmd
+isim.log
+*_beh.prj
+*_isim_beh.exe
+*_isim_beh.wdb
+xilinxsim.ini
