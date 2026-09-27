@@ -25,7 +25,9 @@
 
 电路采用 Moore 型结构。
 
-在子电路外观中，将 `type`、`reset`、`clk` 三个输入引脚从上到下排列在左侧，将 `output` 输出引脚放在右侧。
+在子电路外观中，将 `type`、`reset`、`clk` 三个输入引脚从上到下排列在左侧，将 `output` 输出引脚放在右侧
+
+![p2](./assets/p2.png)
 
 ## T2：Verilog 二进制向量点积
 
