@@ -22,3 +22,7 @@
 标题中标有“重建版”的内容根据回忆整理，不能保证 100% 准确。
 
 题目与解答仅供参考。如本仓库对你有帮助，欢迎点个 Star。
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Michael20070814/BUAA-CO-2026&type=Date)](https://www.star-history.com/#Michael20070814/BUAA-CO-2026&Date)
