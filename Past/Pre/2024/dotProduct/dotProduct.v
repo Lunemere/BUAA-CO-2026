@@ -27,7 +27,7 @@ module dotProduct(
     integer i;
 
     always @(*) begin
-        answer = 6'b0;
+        answer = 6'b0;  // refresh the initial value
         for (i = 0; i < 32; i = i + 1) begin
             answer = answer + vector_a[i] * vector_b[i];
         end
