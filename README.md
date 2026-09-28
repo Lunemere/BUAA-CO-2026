@@ -25,4 +25,4 @@
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Michael20070814/BUAA-CO-2026&type=Date)](https://www.star-history.com/#Michael20070814/BUAA-CO-2026&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Lunemere/BUAA-CO-2026&type=Date)](https://www.star-history.com/#Lunemere/BUAA-CO-2026&Date)
