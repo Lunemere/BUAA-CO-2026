@@ -25,6 +25,12 @@
 
 题目与解答仅供参考。如本仓库对你有帮助，欢迎点个 Star。
 
+## Contributors
+
+<a href="https://github.com/Lunemere/BUAA-CO-2026/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Lunemere/BUAA-CO-2026" alt="Contributors" />
+</a>
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Lunemere/BUAA-CO-2026&type=Date)](https://www.star-history.com/#Lunemere/BUAA-CO-2026&Date)
