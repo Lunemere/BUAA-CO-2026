@@ -19,3 +19,6 @@ xilinxsim.ini
 
 # ignore the C's output
 output/
+
+# ignore thw raw materials
+raw/
