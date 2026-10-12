@@ -37,3 +37,7 @@ reset = 1
 01
 
 10，1，0，0，0
+
+# Arithmetic Right Shifter
+
+这里不给出测试用例，可以直接用shifter进行验证。特别要注意尾数为1的情况
