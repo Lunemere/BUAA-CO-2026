@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module comment_count(
+module comment_filter(
     input clk,
     input reset,
     input [7:0] char,
