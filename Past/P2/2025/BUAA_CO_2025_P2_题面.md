@@ -1,4 +1,4 @@
-# 题面复原
+# BUAA CO 2025 P2
 
 ## T1.Factory
 
