@@ -20,7 +20,7 @@
 n: .space 4					# int n;
 best_area: .space 8				# long long best_area = 0;
 str_space: .asciiz " "
-replenish: .space 2				
+replenish: .space 2				# can also use .align 2
 str_enter: .asciiz "\n"				# enter
 
 .text
@@ -74,7 +74,7 @@ lw $t4, best_area				# low	best_area
 
 slt $t6, $t3, $t5 				# $t6 = 1 if $t3 < $t5
 bne $t6, $0, LESS				# area < best_area
-# $t3 >= $t5
+# $t3 >= $t5					# compare the higher positions first
 bne $t3, $t5, NOT_LESS				# $t3 > $t5
 # $t3 == $t5
 sleu $t6, $t2, $t4				# $s6 = 1 if $t2 <= $t4
