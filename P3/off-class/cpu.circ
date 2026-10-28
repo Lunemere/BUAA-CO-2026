@@ -295,7 +295,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(340,120)" name="Tunnel">
       <a name="label" val="EXTOp"/>
     </comp>
-    <comp lib="1" loc="(9270,7140)" name="AND Gate"/>
     <comp lib="0" loc="(110,770)" name="Tunnel">
       <a name="label" val="RFWr"/>
     </comp>
