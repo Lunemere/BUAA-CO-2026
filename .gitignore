@@ -16,6 +16,19 @@ isim.log
 *_isim_beh.exe
 *_isim_beh.wdb
 xilinxsim.ini
+*.lso
+*.prj
+*.stx
+*.xst
+*.tfi
+*.cmd_log
+*.sdbl
+*.wdb
+*.sdbx
+*.xrpt
+*.syr
+*.xml
+
 
 # ignore the C's output
 output/
