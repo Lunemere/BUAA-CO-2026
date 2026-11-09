@@ -153,3 +153,5 @@ memword[byte*8+7:byte*8] <- mask[byte*8+7:byte*8] & temp1[byte*8+7:byte*8]
 memory[paddr] <- memword
 PC <- PC + 4
 ```
+
+> 感谢 (@cloonedeng-hub)[https://github.com/cloonedeng-hub] 提供的第四题的题面，如果有同学有补充，欢迎提交 PR
