@@ -1,6 +1,6 @@
 # BUAA CO 2023 P4
 
-在课下完成的 Verilog 单周期 MIPS CPU 上添加以下三条新指令。三题互相独立。
+在课下完成的 Verilog 单周期 MIPS CPU 上添加以下四条新指令。四题互相独立。
 
 ## 第一题
 
@@ -102,5 +102,54 @@ if (g3 == m || g2 == m || g1 == m || g0 == m)
 else
 	word[8*b+7 : 8*b] <- 8'hFF
 memory[addr[31:2]] <- word
+PC <- PC + 4
+```
+
+## 第四题
+
+### 指令格式
+
+`SBSAM`-`base`-`rt`-`offset`
+
+I型访存类指令，机器码为`111110`
+
+| 31:26 | 25:21 | 20:16 | 15:0 |
+| --- | --- | --- | --- |
+| `111110` | `base` | `rt` | `offset` |
+
+汇编形式：`sbsam rt, offset(base)`
+
+示例：`sbsam $t0, 1($t1)`
+
+### 指令描述
+
+将`GPR[rt]`中的数据循环左移`GPR[base][4:0]`位。以`offset[15:11]`为32位掩码中1的初始位置，`GPR[base][31:27]`为结束位置，按照下方RTL生成掩码。
+
+按`GPR[base] + sign_ext(offset)`计算字节地址，由地址低两位选出所在字中的一个字节通道。将掩码与循环左移结果在该通道上的对应字节相与，写入内存的该字节通道，其余三个字节保持不变。
+
+指令表现以`.class`指令扩展在MARS中的行为为准。
+
+### RTL语言
+
+```
+vaddr <- GPR[base] + sign_extend(offset)
+byte  <- vaddr[1:0]
+paddr <- vaddr[31:2] || 00
+temp2 <- GPR[base][4:0]
+temp3 <- GPR[base][31:27]
+temp4 <- offset[15:11]
+if temp2 = 0 then
+    temp1 <- GPR[rt]
+else
+    temp1 <- GPR[rt][31-temp2:0] || GPR[rt][31:32-temp2]
+endif
+if temp3 >= temp4 then
+    mask <- (0^{32-temp3} || 1^{temp3-temp4} || 0^{temp4})
+else
+    mask <- (1^{32-temp4} || 0^{temp4-temp3} || 1^{temp3})
+endif
+memword <- memory[paddr]
+memword[byte*8+7:byte*8] <- mask[byte*8+7:byte*8] & temp1[byte*8+7:byte*8]
+memory[paddr] <- memword
 PC <- PC + 4
 ```
