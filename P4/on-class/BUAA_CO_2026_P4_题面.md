@@ -55,7 +55,7 @@ I型跳转类指令，机器码为`011000`。口述未指定`rt`字段，此处�
 ### RTL语言
 
 ```
-if (signed(GPR[rs]) < 0)
+if (GPR[rs] < 0)
     GPR[31] <- PC + 4
     PC <- PC + 4 + (sign_ext(imm16[15:8]) << 2)
 else if (GPR[rs] == 0)
