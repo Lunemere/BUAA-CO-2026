@@ -18,14 +18,14 @@ R型计算类指令，`special`为`000000`，`funct`为`001110`。
 
 ### 指令描述
 
-将`GPR[rs]`从高位到低位切成8个4位块，按无符号数比较各块。令`p = count_ones(GPR[rt]) mod 2`。若`p = 0`，将这些块按降序排列；若`p = 1`，按升序排列。排序后依次从高位到低位拼成32位结果，存入`GPR[rd]`。
+将`GPR[rs]`从高位到低位切成8个4位块，按无符号数比较各块。令`p = count_ones(rt) mod 2`。若`p = 0`，将这些块按降序排列；若`p = 1`，按升序排列。排序后依次从高位到低位拼成32位结果，存入`GPR[rd]`。
 
 ### RTL语言
 
 ```
 for (i = 0; i < 8; i++)
     block[i] <- GPR[rs][4*i+3:4*i]
-p <- count_ones(GPR[rt]) mod 2
+p <- count_ones(rt) mod 2
 if (p == 0)
     sorted <- sort_descending(block)
 else
