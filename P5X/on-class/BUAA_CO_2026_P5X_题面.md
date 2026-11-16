@@ -16,7 +16,7 @@ I型存储类指令，操作码为 `101100`。
 
 将 `GPR[base]` 与符号扩展后的 `offset` 相加，得到有效地址 `vAddr`。将 `GPR[rt]` 从高位到低位分为四个8位数 `a`、`b`、`c`、`d`。
 
-若 `unsigned(a) * signed(d) == unsigned(b) * unsigned(c)`，则将 `GPR[rt]` 的32位数据写入 `Memory[vAddr]`；否则触发 Trap 异常，`ExcCode = 5'd22`。其中仅 `d` 按有符号数解释，`a`、`b`、`c` 均按无符号数解释，比较完整乘积。
+若 `unsigned(a) * unsigned(d) == unsigned(b) * unsigned(c)`，则将 `GPR[rt]` 的32位数据写入 `Memory[vAddr]`；否则触发 Trap 异常，`ExcCode = 5'd22`。
 
 无论乘积等式是否成立，均优先检查 AdES 异常。若发生 AdES，则触发 AdES 异常，也不触发本指令的 Trap 异常。
 
