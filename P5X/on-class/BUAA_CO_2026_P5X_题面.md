@@ -29,7 +29,7 @@ a <- temp[31:24]
 b <- temp[23:16]
 c <- temp[15:8]
 d <- temp[7:0]
-if unsigned(a) * signed(d) == unsigned(b) * unsigned(c)
+if unsigned(a) * unsigned(d) == unsigned(b) * unsigned(c)
     Memory[vAddr] <- temp
 else
     Signal Exception(Trap)    // ExcCode = 5'd22
